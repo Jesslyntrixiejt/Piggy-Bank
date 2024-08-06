@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="MainPane" fx:controller="com.codinggacor.piggybank.HelloController">
+  <Pane fx:id="Drawer" layoutX="-140" prefHeight="600.0" prefWidth="140.0" style="-fx-background-color: #353058;">
+    <Label fx:id="Label_Dashboard" layoutY="138.0" prefHeight="65.0" prefWidth="140.0" text="  Dashboard" textFill="WHITE">
+      <font>
+        <Font name="MS Reference Sans Serif" size="18.0" />
+      </font>
+    </Label>
+    <Label fx:id="Label_Profile" layoutY="203.0" prefHeight="65.0" prefWidth="140.0" text="  Profile" textFill="WHITE">
+      <font>
+        <Font name="MS Reference Sans Serif" size="18.0" />
+      </font>
+    </Label>
+    <Label fx:id="Label_Income" layoutY="268.0" prefHeight="65.0" prefWidth="140.0" text="  Income" textFill="WHITE">
+      <font>
+        <Font name="MS Reference Sans Serif" size="18.0" />
+      </font>
+    </Label>
+    <Label fx:id="Label_Outcome" layoutY="333.0" prefHeight="65.0" prefWidth="140.0" text="  Outcome" textFill="WHITE">
+      <font>
+        <Font name="MS Reference Sans Serif" size="18.0" />
+      </font>
+    </Label>
+    <Label fx:id="Label_Analytics" layoutY="398.0" prefHeight="65.0" prefWidth="140.0" text="  Analytics" textFill="WHITE">
+      <font>
+        <Font name="MS Reference Sans Serif" size="18.0" />
+      </font>
+    </Label>
+  </Pane>
+  <Pane fx:id="NavigationBar" prefHeight="600.0" prefWidth="65.0" style="-fx-background-color: #353058;"
+        onMouseEntered="#openDrawer"
+  onMouseExited="#closeDrawer">
+    <Pane fx:id="Icon_Dashboard" layoutY="138.0" prefHeight="65.0" prefWidth="65.0"
+    onMouseEntered="#onMouseHover"
+    onMouseExited="#onMouseHover"
+    onMouseClicked="#onMouseClicked">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+    </Pane>
+    <Pane fx:id="Icon_Profile" layoutY="203.0" prefHeight="65.0" prefWidth="65.0"
+          onMouseEntered="#onMouseHover"
+          onMouseExited="#onMouseHover"
+          onMouseClicked="#onMouseClicked">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+    </Pane>
+    <Pane fx:id="Icon_Income" layoutY="268.0" prefHeight="65.0" prefWidth="65.0"
+          onMouseEntered="#onMouseHover"
+          onMouseExited="#onMouseHover"
+          onMouseClicked="#onMouseClicked">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+    </Pane>
+    <Pane fx:id="Icon_Outcome" layoutY="333.0" prefHeight="65.0" prefWidth="65.0"
+          onMouseEntered="#onMouseHover"
+          onMouseExited="#onMouseHover"
+          onMouseClicked="#onMouseClicked">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+    </Pane>
+    <Pane fx:id="Icon_Analytics" layoutY="398.0" prefHeight="65.0" prefWidth="65.0"
+          onMouseEntered="#onMouseHover"
+          onMouseExited="#onMouseHover"
+          onMouseClicked="#onMouseClicked">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+    </Pane>
+  </Pane>
+</AnchorPane>
