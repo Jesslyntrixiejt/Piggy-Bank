@@ -7,22 +7,22 @@ import java.util.ArrayList;
 
 public class MonthlyReport {
     private final Month month;
-    private final ArrayList<ExpenseRecord> listOfExpenseRecords;
-    private long totalIncome;
+    private final ArrayList<CashFlow> listOfExpenseRecords;
+    private double totalIncome;
 
-    public long getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public long getTotalOutcome() {
+    public double getTotalOutcome() {
         return totalOutcome;
     }
 
-    public long getTotalIncome() {
+    public double getTotalIncome() {
         return totalIncome;
     }
 
-    public ArrayList<ExpenseRecord> getListOfExpenseRecords() {
+    public ArrayList<CashFlow> getListOfExpenseRecords() {
         return listOfExpenseRecords;
     }
 
@@ -30,8 +30,8 @@ public class MonthlyReport {
         return month;
     }
 
-    private long totalOutcome;
-    private long balance;
+    private double totalOutcome;
+    private double balance;
 
     public MonthlyReport (Month month){
         this.month = month;
@@ -41,34 +41,34 @@ public class MonthlyReport {
         balance = 0;
     }
 
-    public void addRecord(ExpenseRecord expenseRecord) {
-        listOfExpenseRecords.add(expenseRecord);
+    public void addRecord(CashFlow cashFlow) {
+        listOfExpenseRecords.add(cashFlow);
 
-        if (expenseRecord.transactionType().equals(TransactionType.INCOME)) {
+        if (cashFlow instanceof Income) {
             countTotalIncome();
-            balance += expenseRecord.nominal();
+            balance += cashFlow.getNominal();
         }else {
             countTotalOutcome();
-            balance -= expenseRecord.nominal();
+            balance -= cashFlow.getNominal();
 
         }
     }
 
     public void countTotalIncome(){
-        long income = 0;
-        for(ExpenseRecord e : listOfExpenseRecords){
-            if (e.transactionType().equals(TransactionType.INCOME)){
-                income += e.nominal();
+        double income = 0;
+        for(CashFlow e : listOfExpenseRecords){
+            if (e instanceof Income){
+                income += e.getNominal();
             }
         }
         totalIncome = income;
     }
 
     public void countTotalOutcome(){
-        long outcome = 0;
-        for(ExpenseRecord e : listOfExpenseRecords){
-            if (e.transactionType().equals(TransactionType.OUTCOME)){
-                outcome += e.nominal();
+        double outcome = 0;
+        for(CashFlow e : listOfExpenseRecords){
+            if (e instanceof Outcome){
+                outcome += e.getNominal();
             }
         }
         totalOutcome = outcome;
